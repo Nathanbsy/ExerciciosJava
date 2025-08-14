@@ -29,5 +29,12 @@ public class Main {
         int valorVendaInteger = (int) valorVendaDouble;
         System.out.println(valorVendaInteger);
 
+        //Testando calculos
+        double nota1 = 7.5;
+        double nota2 = 8.0;
+        double nota3 = 9.0;
+        double total = nota1 + nota2 + nota3;
+
+        System.out.println(total / 3);
     }
 }
