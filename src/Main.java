@@ -1,6 +1,12 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
+    public static void conversorTemperatura(int temperatura) {
+        double fahrenheit = (temperatura * 1.8) + 32;
+        double kelvin = temperatura + 273.15;
+        System.out.println("Celsius: " + temperatura + "ºC" + "\nFahrenheit: " + fahrenheit + "ºF" + "\nKelvin: " + kelvin + "ºK");
+    }
     public static void main(String[] args) {
         int quantidadePassos = 500;
         double alturaEmMetros = 1.50;
@@ -35,6 +41,10 @@ public class Main {
         double nota3 = 9.0;
         double total = nota1 + nota2 + nota3;
 
-        System.out.println(total / 3);
+        System.out.println("Média: " + total / 3);
+
+        //Testando Métodos
+        conversorTemperatura(20);
+
     }
 }
