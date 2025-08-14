@@ -15,6 +15,7 @@ public class Main {
         } else {
             sugestao = "Parabéns";
         }
+        //Testando classes
         Pessoa pessoa = new Pessoa();
         pessoa.nome = "Thayná";
         pessoa.altura = 1.50;
@@ -22,5 +23,11 @@ public class Main {
         pessoa.peso = 70.00;
         pessoa.sexo = 'F';
         System.out.println("Nome: " + pessoa.nome + "\nAltura: " + pessoa.altura + "\nIdade: " + pessoa.idade + "\nSexo: " + pessoa.sexo + "\nPeso: " + pessoa.peso);
+
+        //Testando conversão de tipos
+        double valorVendaDouble = 19.5;
+        int valorVendaInteger = (int) valorVendaDouble;
+        System.out.println(valorVendaInteger);
+
     }
 }
