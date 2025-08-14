@@ -1,7 +1,7 @@
 public class Pessoa {
-    private String nome;
-    private double peso;
-    private double altura;
-    private char sexo;
-    private int idade;
+    public String nome;
+    public double peso;
+    public double altura;
+    public char sexo;
+    public int idade;
 }
