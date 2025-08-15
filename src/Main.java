@@ -3,9 +3,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
     private static final Scanner input = new Scanner(System.in);
     static List<Livro> livros = new ArrayList<>();
     static int codigoLivro = 2;
+
     public static void conversorTemperatura(int temperatura) {
         double fahrenheit = (temperatura * 1.8) + 32;
         double kelvin = temperatura + 273.15;
@@ -39,6 +41,7 @@ public class Main {
             cadastrarLivro();
         }
     }
+
     public static void listarLivros() {
         for(Livro livro : livros) {
             System.out.println("Codigo: " + livro.codigo + "\nTitulo: " + livro.titulo + "\nAutor: " + livro.autor + "\nNúmero de Páginas: " + livro.numeroPaginas + "\nPreço: R$" + livro.preco + "\nCategoria: "  + livro.categoria + "\n");
@@ -153,29 +156,68 @@ public class Main {
 
         livros.add(livro2);
 
-        int opcao;
+//        int opcao;
+//
+//        do {
+//            System.out.println("--- Menu CRUD do Livro ---");
+//            System.out.println("1 - Criar");
+//            System.out.println("2 - Listar");
+//            System.out.println("3 - Atualizar");
+//            System.out.println("4 - Deletar");
+//            System.out.println("0 - Sair");
+//            System.out.print("Escolha: ");
+//            opcao = input.nextInt();
+//            input.nextLine(); // limpa o buffer
+//
+//            switch (opcao) {
+//                case 1 -> cadastrarLivro();
+//                case 2 -> listarLivros();
+//                case 3 -> atualizarLivro();
+//                case 4 -> deletarLivro();
+//                case 0 -> System.out.println("Saindo...");
+//                default -> System.out.println("Opção inválida!");
+//            }
+//        } while (opcao != 0);
+//
+//        input.close();
+        List<Produto> produtos = new ArrayList<>();
+        Produto p1 = new Produto();
+        p1.nome = "Cookies";
+        p1.descricao = "Cookies deliciosos";
+        p1.preco = 50.00;
 
-        do {
-            System.out.println("--- Menu CRUD do Livro ---");
-            System.out.println("1 - Criar");
-            System.out.println("2 - Listar");
-            System.out.println("3 - Atualizar");
-            System.out.println("4 - Deletar");
-            System.out.println("0 - Sair");
-            System.out.print("Escolha: ");
-            opcao = input.nextInt();
-            input.nextLine(); // limpa o buffer
+        Produto p2 = new Produto();
+        p2.nome = "Suco de Maçã";
+        p2.descricao = "Suco favorito da Sarinha";
+        p2.preco = 60.00;
 
-            switch (opcao) {
-                case 1 -> cadastrarLivro();
-                case 2 -> listarLivros();
-                case 3 -> atualizarLivro();
-                case 4 -> deletarLivro();
-                case 0 -> System.out.println("Saindo...");
-                default -> System.out.println("Opção inválida!");
-            }
-        } while (opcao != 0);
+        Produto p3 = new Produto();
+        p3.nome = "Suco de Maracujá";
+        p3.descricao = "Suco favorito da Gu";
+        p3.preco = 250.00;
 
-        input.close(); // fecha no final do programa
+        produtos.add(p1);
+        produtos.add(p2);
+        produtos.add(p3);
+
+        List<Produto> economico = new ArrayList<>();
+        List<Produto> intermediario = new ArrayList<>();
+        List<Produto> premium = new ArrayList<>();
+
+        //Aplicando o for em arrays de objetos
+        for (Produto produto : produtos) {
+            if(produto.preco <= 50) economico.add(produto);
+            if(produto.preco > 50.01 && produto.preco <= 200) intermediario.add(produto);
+            if(produto.preco > 200)  premium.add(produto);
+        }
+        for (Produto produto : economico) {
+            System.out.println("\nItens ecônomicos: " + "\nNome: " + produto.nome + "\nDescrição: " +  produto.descricao + "\nPreço: R$" + produto.preco);
+        }
+        for (Produto produto : intermediario) {
+            System.out.println("\nItens intemediário: " + "\nNome: " + produto.nome + "\nDescrição: " +  produto.descricao + "\nPreço: R$" + produto.preco);
+        }
+        for (Produto produto : premium) {
+            System.out.println("\nItens premium: " + "\nNome: " + produto.nome + "\nDescrição: " +  produto.descricao + "\nPreço: R$" + produto.preco);
+        }
     }
 }
